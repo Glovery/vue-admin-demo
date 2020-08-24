@@ -51,6 +51,13 @@ module.exports = {
       })
       .end();
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/styles/reset.scss";`
+      }
+    }
+  },
   configureWebpack: config => {
     // 用cdn方式引入，则构建时要忽略相关资源
     if (isProduction || devNeedCdn) config.externals = cdn.externals;
