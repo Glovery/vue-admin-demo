@@ -1,4 +1,4 @@
-const login = () => import("@/pages/common/login");
+const login = () => import("@/pages/common/login.vue");
 
 const routes = [
   {
