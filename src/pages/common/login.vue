@@ -7,12 +7,12 @@
         :rules="rules"
         ref="loginForm"
         label-position="left"
-        label-width="70px"
+        label-width="0px"
         class="login-form"
       >
         <el-row class="row">
           <el-col>
-            <el-form-item label="用户名：" prop="username">
+            <el-form-item prop="username">
               <el-input
                 v-model="loginForm.username"
                 prefix-icon="el-icon-user"
@@ -23,8 +23,9 @@
         </el-row>
         <el-row class="row">
           <el-col>
-            <el-form-item label="密码：" prop="password">
+            <el-form-item prop="password">
               <el-input
+                @keyup.enter.native="login"
                 v-model="loginForm.password"
                 prefix-icon="el-icon-unlock"
                 placeholder="请输入密码"
